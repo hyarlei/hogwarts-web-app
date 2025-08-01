@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundo Mágico de Harry Potter</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+      
+      :root {
+        --gryffindor: #740001;
+        --gryffindor-gold: #D3A625;
+        --slytherin: #1A472A;
+        --slytherin-silver: #AAAAAA;
+        --ravenclaw: #0E1A40;
+        --ravenclaw-bronze: #946B2D;
+        --hufflepuff: #ECB939;
+        --hufflepuff-black: #000000;
+        --magic-purple: #4B0082;
+        --magic-gold: #FFD700;
+        --dark-bg: #1a1a1a;
+        --parchment: #F4F1DE;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, var(--dark-bg) 0%, var(--magic-purple) 100%);
+        color: #333;
+        min-height: 100vh;
+      }
+      
+      .magical-title {
+        font-family: 'Cinzel', serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

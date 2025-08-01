@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./hogwarts.db"
+}
+
+model House {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  founder     String
+  colors      String
+  animal      String
+  element     String
+  traits      String
+  points      Int       @default(0)
+  createdAt   DateTime  @default(now())
+  
+  characters  Character[]
+  
+  @@map("houses")
+}
+
+model Character {
+  id          Int       @id @default(autoincrement())
+  name        String
+  house       House?    @relation(fields: [houseId], references: [id])
+  houseId     Int?
+  bloodStatus String?   // Pure-blood, Half-blood, Muggle-born
+  species     String    @default("Human") // Human, House-elf, Giant, etc.
+  occupation  String?
+  patronus    String?
+  boggart     String?
+  wand        String?
+  isAlive     Boolean   @default(true)
+  description String?
+  imageUrl    String?
+  createdAt   DateTime  @default(now())
+  
+  @@map("characters")
+}
+
+model Spell {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  incantation String?
+  type        String    // Charm, Curse, Hex, Jinx, etc.
+  effect      String
+  difficulty  String    // Beginner, Intermediate, Advanced, Expert
+  description String?
+  createdAt   DateTime  @default(now())
+  
+  @@map("spells")
+}
+
+model Potion {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  effect      String
+  difficulty  String    // Beginner, Intermediate, Advanced, Expert
+  ingredients String    // JSON string with ingredients list
+  brewing     String?   // Brewing instructions
+  description String?
+  createdAt   DateTime  @default(now())
+  
+  @@map("potions")
+}
+
+model Location {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  type        String    // Castle, Shop, School, etc.
+  description String?
+  createdAt   DateTime  @default(now())
+  
+  @@map("locations")
+}
