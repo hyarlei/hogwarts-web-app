@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "name": "hogwarts-web-app",
-  "buildCommand": "cd frontend && npm install && npm run build:vercel",
-  "outputDirectory": "frontend/dist",
-  "installCommand": "npm install --prefix frontend",
-  "devCommand": "cd frontend && npm run dev",
-  "framework": null
-}
