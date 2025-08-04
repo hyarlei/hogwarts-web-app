@@ -18,10 +18,12 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
+    "build": "bash build.sh",
+    "build:vercel": "chmod +x build.sh && bash build.sh",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "postinstall": "chmod +x node_modules/.bin/* || true"
+    "fix-permissions": "find node_modules/.bin -type f -exec chmod +x {} + 2>/dev/null || true",
+    "postinstall": "npm run fix-permissions"
   },
   "browserslist": {
     "production": [
