@@ -14,7 +14,8 @@
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.1.0",
     "typescript": "^5.3.0",
-    "vite": "^5.0.0"
+    "vite": "^5.0.0",
+    "terser": "^5.24.0"
   },
   "scripts": {
     "dev": "vite",
@@ -22,7 +23,8 @@
     "build:vercel": "chmod +x build.sh && bash build.sh",
     "build:render": "chmod +x node_modules/.bin/* && chmod +x node_modules/@esbuild/*/bin/* && node node_modules/vite/bin/vite.js build",
     "build:direct": "./node_modules/.bin/vite build",
-    "build:simple": "vite build --mode production",
+    "build:simple": "vite build --mode production --minify esbuild",
+    "build:no-minify": "vite build --mode production --minify false",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "fix-permissions": "find node_modules/.bin -type f -exec chmod +x {} + 2>/dev/null || true && find node_modules -name 'esbuild' -type f -exec chmod +x {} + 2>/dev/null || true",
