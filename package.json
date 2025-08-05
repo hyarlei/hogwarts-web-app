@@ -1,0 +1,14 @@
+{
+  "name": "hogwarts-backend-deploy",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "chmod +x build-backend.sh && ./build-backend.sh",
+    "start": "chmod +x start-backend.sh && ./start-backend.sh",
+    "build-direct": "cd backend && npm install && chmod +x node_modules/.bin/* && node_modules/.bin/prisma generate && npm run build",
+    "start-direct": "cd backend && npm start"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
