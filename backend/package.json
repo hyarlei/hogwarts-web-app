@@ -15,7 +15,8 @@
     "db:seed": "ts-node src/seed.ts",
     "db:seed:prod": "node -r ts-node/register src/seed.ts",
     "db:studio": "prisma studio",
-    "build:render": "npm run db:generate && npm run build"
+    "build:render": "npm run db:generate && npm run build",
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.7.0",
