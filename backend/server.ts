@@ -3,11 +3,11 @@ import cors from 'cors';
 import express from 'express';
 
 // Routes
-import charactersRouter from '../src/routes/characters';
-import housesRouter from '../src/routes/houses';
-import locationsRouter from '../src/routes/locations';
-import potionsRouter from '../src/routes/potions';
-import spellsRouter from '../src/routes/spells';
+import charactersRouter from './src/routes/characters';
+import housesRouter from './src/routes/houses';
+import locationsRouter from './src/routes/locations';
+import potionsRouter from './src/routes/potions';
+import spellsRouter from './src/routes/spells';
 
 const app = express();
 const prisma = new PrismaClient();
