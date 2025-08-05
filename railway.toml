@@ -1,0 +1,11 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd backend && npm install && npx prisma generate && npm run build"
+
+[deploy]
+startCommand = "cd backend && npm start"
+restartPolicyType = "always"
+
+[env]
+NODE_ENV = "production"
+DATABASE_URL = "file:./prisma/hogwarts.db"
