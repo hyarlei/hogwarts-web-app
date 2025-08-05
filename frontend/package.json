@@ -19,8 +19,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "bash build.sh",
-    "build:vercel": "chmod +x build.sh && bash build.sh",
+    "build": "vite build",
+    "build:vercel": "vite build",
     "build:render": "chmod +x node_modules/.bin/* && chmod +x node_modules/@esbuild/*/bin/* && node node_modules/vite/bin/vite.js build",
     "build:direct": "./node_modules/.bin/vite build",
     "build:simple": "vite build --mode production --minify esbuild",
