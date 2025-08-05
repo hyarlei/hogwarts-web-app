@@ -4,7 +4,7 @@
   "description": "Backend API para aplicação do universo Harry Potter",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npx prisma generate && npx tsc",
+    "build": "npx prisma generate && echo '====== PRISMA GENERATE DONE ======' && npx tsc && echo '====== TSC COMPILE DONE ======'",
     "build:safe": "npx prisma generate && ./node_modules/.bin/tsc || node_modules/typescript/bin/tsc",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "start": "node dist/index.js",
